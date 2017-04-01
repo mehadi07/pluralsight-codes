@@ -1,58 +1,39 @@
-(function(){
+(function () {
     var app = angular.module("githubViewer");
-    
-    var MainController = function($scope, github, $interval, $log, $anchorScroll, $location){
-        
-        var onUserComplete = function(data){
-            $scope.user = data;
-            github.getRepos($scope.user).then(onRepos, onError);
-        };
-        
-        var onRepos = function(data){
-          $scope.repos = data;
-            $location.hash("userDetails");
-            $anchorScroll();
-            
-        };
-        
-        var onError = function(reason){
-            $scope.error = "Could not fetch the data";
-        };
-        
-        var decrementCountdown = function(){
+
+    var MainController = function ($scope, $interval, $location) {
+
+        var decrementCountdown = function () {
             $scope.countdown -= 1;
-            if ($scope.countdown < 1){
+            if ($scope.countdown < 1) {
                 $scope.search($scope.username);
             }
         };
-        
+
         var countdownInterval = null;
-        var startCountdown = function(){
+        var startCountdown = function () {
             countdownInterval = $interval(decrementCountdown, 1000, $scope.countdown);
         };
-        
-        $scope.search = function(username){
-            $log.info("searching for" + username);
-            github.getUser(username).then(onUserComplete, onError);
-            
-            if (countdownInterval){
+
+        $scope.search = function (username) {
+            if (countdownInterval) {
                 $interval.cancel(countdownInterval);
                 $scope.countdown = null;
             }
+            $location.path("/user/" + username);
+
         };
         $scope.username = "mehadi07";
-        $scope.message = "GitHub Viewer";
-        $scope.repoSortOrder = "-stargazers_count":
-        $scope.countdown = 10;
-        $scope.Countdown();
-        
+        $scope.countdown = 5;
+        startCountdown();
+
     };
-    
-    
-    
-   app.controller("MainController", MainController); 
-    
-    
-    
-    
+
+
+
+    app.controller("MainController", MainController);
+
+
+
+
 })();

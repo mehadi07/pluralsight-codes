@@ -1,5 +1,5 @@
 (function(){
-        var app = angular.module("githubViewer", ["ng-route"]);
+        var app = angular.module('githubViewer', ['ngRoute','ngResource']);
     
     app.config(function($routeProvider){
         
@@ -9,7 +9,7 @@
             controller: "MainController"
         })
         .when("/user/:username", {
-            templateUrl: "user.html"
+            templateUrl: "user.html",
             controller: "UserController"
         })
         .otherwise({redirectTo:"/main"});
