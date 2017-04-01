@@ -23,7 +23,7 @@
             $location.path("/user/" + username);
 
         };
-        $scope.username = "mehadi07";
+        $scope.username = "angular";
         $scope.countdown = 5;
         startCountdown();
 

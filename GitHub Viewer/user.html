@@ -1,7 +1,6 @@
 <div>
-    <h2> {{user.name}} </h2>
-    {{error}}
-    <img ng-src= "http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}">
+    <h2> {{user.name}} </h2> {{error}}
+    <img ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}">
     <select ng-model="repoSortOrder">
         <option value="+name">Name</option>
         <option value="-stargazers-count">Stars</option>
@@ -22,7 +21,9 @@
 
     <tbody>
         <tr ng-repeat="repo in repos | orderBy: repoSortOrder">
-            <td>{{repo.name}}</td>
+            <td>
+                <a href="#/repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a>
+            </td>
             <td>{{repo.stargazers_count | number}}</td>
             <td>{{repo.language}}</td>
         </tr>
