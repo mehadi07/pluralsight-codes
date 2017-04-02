@@ -21,4 +21,4 @@
     };
 
     module.controller("RepoController", RepoController);
-})()
+})();
