@@ -19,22 +19,37 @@ eventsApp.controller('EventController',
                     name: 'Directive Masterclass',
                     creatorName: 'Bob Smith',
                     Duration: '1 hr',
-                    level: 'advance'
+                    level: 'advance',
+                    upVoteCount: 0
            },
                 {
                     name: 'Scope for fun and profit',
                     creatorName: 'Jhon Doe',
                     Duration: '45 mins',
-                    level: 'advance'
+                    level: 'advance',
+                    upVoteCount: 0
+
 
            },
                 {
                     name: 'well Behaved Controllers',
                     creatorName: 'Md Mehadi Hasan Mozumder',
                     Duration: '1 hr',
-                    level: 'advance'
+                    level: 'advance',
+                    upVoteCount: 0
+
 
            }
        ]
         };
+    
+    $scope.upVoteSession = function (session){
+        session.upVoteCount++;
+    };
+    
+    $scope.downVoteSession = function(session){
+        session.upVoteCount--;
+    };
+    
+    
     });
