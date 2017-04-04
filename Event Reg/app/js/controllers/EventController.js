@@ -4,6 +4,13 @@
 eventsApp.controller('EventController',
 
     function EventController($scope) {
+        $scope.snippet = '<span style="red">Demo Project</span>';
+        $scope.boolValue = true;
+        $scope.mystyle = {
+            color: 'red'
+        };
+        $scope.buttonDisabled = true;
+        $scope.myclass = "blue";
         $scope.event = {
             name: 'Angular Event App',
             date: '04/02/2017',
@@ -42,14 +49,14 @@ eventsApp.controller('EventController',
            }
        ]
         };
-    
-    $scope.upVoteSession = function (session){
-        session.upVoteCount++;
-    };
-    
-    $scope.downVoteSession = function(session){
-        session.upVoteCount--;
-    };
-    
-    
+
+        $scope.upVoteSession = function (session) {
+            session.upVoteCount++;
+        };
+
+        $scope.downVoteSession = function (session) {
+            session.upVoteCount--;
+        };
+
+
     });

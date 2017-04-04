@@ -10,12 +10,13 @@
     <script src="lib/underscore-1.4.4.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-sanitize.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/EventController.js"></script>
 
 </head>
 
-<body>
+<body ng-cloak>
     <div class="container">
         <div class="navbar-inner">
             <ul class="nav">
@@ -27,13 +28,26 @@
         <div ng-controller="EventController" style="padding-left:20px; padding-right:20px">
             <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
             <div class="row">
-                <div class="span1">
-                    <h2> {{event.name}}</h2>
+                <div class="span2">
+                    <h2 ng-class="myclass" ng-bind-template="{{event.name}} {{event.date}}"></h2>
                 </div>
+            </div>
+            <div class="row">
+
+                <button class="btn" ng-disabled="buttonDisabled">Disable</button>
+
+
+                <div ng-bind-html-unsafe='snippet'></div>
+                <div ng-bind-html="snippet">Some Title</div>
+                <div ng-show="boolValue">Show This</div>
+                <div ng-hide="boolValue">Hide This</div>
+
+
+
 
             </div>
             <div class="row">
-                <div class="span2">
+                <div class="span3">
                     <div><strong>Date: </strong> {{event.date}}</div>
                     <div><strong>Time: </strong> {{event.time}}</div>
                 </div>
