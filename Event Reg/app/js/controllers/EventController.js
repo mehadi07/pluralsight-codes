@@ -4,10 +4,11 @@
 eventsApp.controller('EventController',
 
     function EventController($scope) {
+        $scope.sortorder = "name"
         $scope.snippet = '<span style="red">Demo Project</span>';
         $scope.boolValue = true;
         $scope.mystyle = {
-            color: 'red'
+            color: ''
         };
         $scope.buttonDisabled = true;
         $scope.myclass = "blue";
@@ -25,14 +26,14 @@ eventsApp.controller('EventController',
                 {
                     name: 'Directive Masterclass',
                     creatorName: 'Bob Smith',
-                    Duration: '1 hr',
+                    duration: 3,
                     level: 'advance',
                     upVoteCount: 0
            },
                 {
                     name: 'Scope for fun and profit',
                     creatorName: 'Jhon Doe',
-                    Duration: '45 mins',
+                    duration: 2,
                     level: 'advance',
                     upVoteCount: 0
 
@@ -41,7 +42,7 @@ eventsApp.controller('EventController',
                 {
                     name: 'well Behaved Controllers',
                     creatorName: 'Md Mehadi Hasan Mozumder',
-                    Duration: '1 hr',
+                    duration: 4,
                     level: 'advance',
                     upVoteCount: 0
 
