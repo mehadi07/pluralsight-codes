@@ -1,5 +1,5 @@
 {
-  "name": "demoapp",
+  "name": "eventsapp",
   "version": "1.0.0",
   "description": "This project is a sample application demonstrating a more fully developed realistic single page angular application.",
   "main": "index.js",
@@ -14,5 +14,10 @@
   "dependencies": {
     "body-parser": "1.13.1",
     "express": "4.13.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "c:/Drive E/MISM/GitHub/pluralsight-codes/Event Reg/app"
   }
 }
