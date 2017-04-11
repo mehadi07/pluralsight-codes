@@ -13,13 +13,17 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = true;
         $scope.myclass = "blue";
 
-        eventData.getEvent()
-            .success(function (event) {
+        $scope.event = eventData.getEvent()
+            .$promise
+            .then(function (event) {
                 $scope.event = event;
+                console.log(event);
             })
-            .error(function (data, status, headers, config) {
-                $log.warn(data, status, headers(), config);
-            });
+            .catch(function (response) {
+                    $console.log(response);
+                }
+
+            );
 
         $scope.upVoteSession = function (session) {
             session.upVoteCount++;
