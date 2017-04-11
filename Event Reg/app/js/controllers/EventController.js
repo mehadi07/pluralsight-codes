@@ -3,7 +3,7 @@
 
 eventsApp.controller('EventController',
 
-    function EventController($scope, eventData, $log) {
+    function EventController($scope, eventData, $log, $anchorScroll) {
         $scope.sortorder = 'name';
         $scope.snippet = '<span style="red">Demo Project</span>';
         $scope.boolValue = true;
@@ -32,6 +32,9 @@ eventsApp.controller('EventController',
         $scope.downVoteSession = function (session) {
             session.upVoteCount--;
         };
+        $scope.scrollToSession = function () {
+            $anchorScroll();
+        }
 
 
     });
