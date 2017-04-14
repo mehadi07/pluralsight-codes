@@ -3,7 +3,7 @@
 
 eventsApp.controller('EventController',
 
-    function EventController($scope, eventData, $log, $anchorScroll) {
+    function EventController($scope, eventData, $log, $anchorScroll, $routeParams) {
         $scope.sortorder = 'name';
         $scope.snippet = '<span style="red">Demo Project</span>';
         $scope.boolValue = true;
@@ -13,7 +13,7 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = true;
         $scope.myclass = "blue";
 
-        $scope.event = eventData.getEvent()
+        $scope.event = eventData.getEvent($routeParams.eventId)
             .$promise
             .then(function (event) {
                 $scope.event = event;
