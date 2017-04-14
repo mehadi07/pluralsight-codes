@@ -13,6 +13,11 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
         $routeProvider.when('/event/:eventId', {
             templateUrl: 'templates/EventDetails.html',
             controller: 'EventController',
+            /* resolve is used to wait for data from server 
+                and updated EventController.js using 
+                $scope.event = $route.current.locals.event; */
+
+
             resolve: {
                 event: function ($route, eventData) {
                     return eventData.getEvent($route.current.pathParams.eventId).$promise;
@@ -23,7 +28,7 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
             redirectTo: '/events'
         });
 
-        // removes # from url
-        // added base tag on index.html which is a prefix and determine where to start.
+        /* removes # from url
+         added base tag on index.html which is a prefix and determine where to start.*/
         $locationProvider.html5Mode(true);
     }]);
