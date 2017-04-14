@@ -3,7 +3,7 @@
 
 eventsApp.controller('EventController',
 
-    function EventController($scope, eventData, $log, $anchorScroll, $routeParams) {
+    function EventController($scope, eventData, $log, $anchorScroll,$route, $routeParams) {
         $scope.sortorder = 'name';
         $scope.snippet = '<span style="red">Demo Project</span>';
         $scope.boolValue = true;

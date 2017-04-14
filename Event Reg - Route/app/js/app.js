@@ -1,6 +1,6 @@
 'use strict';
 
-var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
+var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute', 'ngSanitize'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider.when('/newEvent', {
             templateUrl: 'templates/NewEvent.html',

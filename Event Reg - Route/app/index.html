@@ -17,18 +17,22 @@
     <script src="js/controllers/EventController.js"></script>
     <script src="js/controllers/EditEventController.js"></script>
     <script src="js/controllers/EventListController.js"></script>
+    <script src="js/controllers/MainMenuController.js"></script>
     <script src="js/filters.js"></script>
+    <script src="lib/angular/angular-sanitize.js"></script>
     <script src="js/services/EventData.js"></script>
 
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar">
+        <div class="navbar" ng-controller="MainMenuController">
             <div class="navbar-inner">
                 <ul class="nav">
-                    <li> <a href="newEvent"> Create Event </a> </li>
-                    <li> <a href="events"> Event List </a> </li>
+                    
+                   
+                    <li> <a href="#" ng-click="createEvent()"> Create Event </a> </li>
+                    <li> <a href="#" ng-click="events()"> Event List </a> </li>
 
 
 
