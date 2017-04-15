@@ -24,6 +24,11 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute', 'ngSanitiz
                 }
             }
         });
+
+        $routeProvider.when('/sampleDirective', {
+            templateUrl: 'templates/SampleDirective.html',
+            controller: 'SampleDirectiveController'
+        });
         $routeProvider.otherwise({
             redirectTo: '/events'
         });
