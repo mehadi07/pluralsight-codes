@@ -15,7 +15,9 @@
     "body-parser": "1.13.1",
     "express": "4.13.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "karma-firefox-launcher": "^1.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "c:/Drive E/MISM/GitHub/pluralsight-codes/Event Reg/app"
